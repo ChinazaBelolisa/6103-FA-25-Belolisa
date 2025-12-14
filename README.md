@@ -22,7 +22,7 @@ Given a user's rating history, can we predict which movies they'll enjoy? A naiv
 **1. Classification (70% accuracy)**
 - Engineered 23 features per user-movie pair
 - Trained Logistic Regression, SVM, and KNN classifiers
-- **Result:** Models learned "popular movies get liked by generous raters" — not actual personalization
+- **Result:** Models learned "popular movies get liked by generous raters"; they did not learn actual personalization
 
 **2. Collaborative Filtering (81.3% hit rate)**
 - Used rating matrix directly with Item-KNN
@@ -39,11 +39,11 @@ The logistic regression coefficients revealed the problem:
 | user_avg_rating | 1.58 |
 | Genre features | ~0.01 |
 
-The model took a shortcut — it learned that highly-rated movies get liked by users who rate generously, ignoring actual preferences.
+The model took a shortcut. It learned that highly-rated movies get liked by users who rate generously, ignoring actual preferences.
 
 ### Why Collaborative Filtering Worked
 
-Item-KNN doesn't need to "understand" movies. It discovers that users who liked Movie A also tend to like Movie B, without knowing why. The algorithm doesn't care that Star Wars is sci-fi — it just observes that Toy Story fans rate it highly too.
+Item-KNN doesn't need to "understand" movies. It discovers that users who liked Movie A also tend to like Movie B, without knowing why. The algorithm doesn't care that Star Wars is sci-fi. It just observes that Toy Story fans rate it highly too.
 
 ## Project Structure
 
